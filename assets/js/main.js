@@ -45,32 +45,32 @@ const esPar = (num) => {
 
 // Switch Case -> Tipo de condicional que funciona como interruptor
 
-const estacion = prompt('Elige una estación del año: ')
 
 
 const crearMensajeEstacion = (estacion) => {
-
+    
     switch(estacion.toLocaleLowerCase()) {
         case 'verano':
             return('El sol me derrite y consume! D:') // return devuelve el dato y es el ultimo en el bloque de código
-
+            
         case 'otoño':
             return('Que lindos colores')
             
         case 'invierno':
             return('Me congelo')
-            
+                    
         case 'primavera':
             return('Los pajaritos cantan')
-            
+                        
         default:
             return('Escoge una estación valida')
     }
 }
-
+                    
+/* const estacion = prompt('Elige una estación del año: ')
 console.log(crearMensajeEstacion(estacion))
-
-/* 
+                     */
+                    /* 
 Truthy -> Valore s que no son necesariamente Booleanos verdaderos pero Js los interpreta como tal
 Todo el resto
 
@@ -85,3 +85,23 @@ null
 undefined
 
 */ 
+
+// Ciclos -> Estructura de código que se repite a si mismo bajo ciertas condiciones
+
+// Ciclo For
+
+/*
+
+for (variableInicializadora; condicion; incremento) {
+    el código a repetir
+} 
+    
+*/
+            //11   11<=10      2 + 1 = 3
+for (let i = 1; i <= 10; i++) {
+    console.log(i)
+}
+
+//métodos de array
+
+//listas de cosas que vamos a procesar
