@@ -21,17 +21,57 @@ const aplicarDscto = (edad, esEstudiante) => {
     if (esEstudiante || edad >= 65) return "Felicidades, tienes un 25% de dscto";
     return "Precio normal, no tienes dscto";
 }
-
+/* 
 const edad = Number(prompt('Ingresa tu edad: '))
 let esEstudiante = Number(prompt('Eres estudiante?: (responde 1 para Si y 0 para No)'))
 
-
-
 console.log(aplicarDscto(edad, esEstudiante))
+ */
 
+//Operador Ternario -> Sugar Sintax del if else, OJO solo usar con condiciones simples (true o false)
+
+const esPar = (num) => {
+    /* if(num % 2 === 0) {
+        return 'Es par'
+    } else {
+        return 'Es impar'
+    } */
+
+    /* condicion ? lo que pasa si es true : lo que pasa si es false */
+
+    num % 2 === 0 ? 'es par' : 'es impar'
+}
+
+
+// Switch Case -> Tipo de condicional que funciona como interruptor
+
+const estacion = prompt('Elige una estación del año: ')
+
+
+const crearMensajeEstacion = (estacion) => {
+
+    switch(estacion.toLocaleLowerCase()) {
+        case 'verano':
+            return('El sol me derrite y consume! D:') // return devuelve el dato y es el ultimo en el bloque de código
+
+        case 'otoño':
+            return('Que lindos colores')
+            
+        case 'invierno':
+            return('Me congelo')
+            
+        case 'primavera':
+            return('Los pajaritos cantan')
+            
+        default:
+            return('Escoge una estación valida')
+    }
+}
+
+console.log(crearMensajeEstacion(estacion))
 
 /* 
-Truthy -> Valores que no son necesariamente Booleanos verdaderos pero Js los interpreta como tal
+Truthy -> Valore s que no son necesariamente Booleanos verdaderos pero Js los interpreta como tal
 Todo el resto
 
 
