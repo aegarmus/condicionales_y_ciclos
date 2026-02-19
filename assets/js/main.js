@@ -98,9 +98,81 @@ for (variableInicializadora; condicion; incremento) {
     
 */
             //11   11<=10      2 + 1 = 3
-for (let i = 1; i <= 10; i++) {
+/* for (let i = 1; i <= 10; i++) {
     console.log(i)
 }
+ */
+/* FizzBuzz -> 
+    tienes que imprimir números del 1 al 100
+    si el número es multiplo de 3 imprimir Fizz
+    Si el número es multiplo de 5 imprimir buzz
+    Si el numero multiplo de 3 y 5 imprimir fizzBuzz
+
+ */ 
+
+
+/* for (let i=1; i <= 100; i++) {
+
+    if(i % 15 === 0) {
+        console.log('FizzBuzz')
+    } else if ( i % 3 === 0 ) {
+        console.log('Fizz')
+    } else if (i % 5 === 0) {
+        console.log('Buzz')
+    } else {
+        console.log(i)
+    }
+} */
+
+
+// Dscto a Carrito de compra
+
+/* 
+Tenemos un carrito de compra, en esta tienda se aplican dsctos por tramos de precios
+
+total de compra es superior o igual a 50000 -> 10%
+total de compra es suprerior o igual a 30000 -> 5%
+si no esta en esos rangos no hay descuento
+
+*/
+
+
+const formatCurrency = (amount, countryFormat, currency) => {
+    return new Intl.NumberFormat(countryFormat, {
+        style: 'currency',
+        currency: currency
+    }).format(amount) // es-ES es-CL en-US
+}
+
+const COUNTRY_FORMAT = 'en-US'
+const CURRENCY = 'USD'
+
+
+const preciosCarrito = [12990, 8990, 15990, 4990,2990, 10990]
+let totalAcumulado = 0
+
+
+for(let i=0; i < preciosCarrito.length; i++) {
+    totalAcumulado = totalAcumulado + preciosCarrito[i]
+} 
+
+
+let descuento = 0
+
+if (totalAcumulado >= 50000) descuento = 0.1
+else if (totalAcumulado >=30000) descuento = 0.05;
+
+const totalFinal = Math.round(totalAcumulado * (1 - descuento))
+
+console.log(`Precio total de compra ${formatCurrency(totalAcumulado, COUNTRY_FORMAT, CURRENCY)}, se aplica descuento de ${descuento * 100}%`)
+console.log(
+    `Total a pagar: ${formatCurrency(totalFinal, COUNTRY_FORMAT, CURRENCY)}`,
+);
+
+
+
+
+
 
 //métodos de array
 
