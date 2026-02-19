@@ -169,6 +169,123 @@ console.log(
     `Total a pagar: ${formatCurrency(totalFinal, COUNTRY_FORMAT, CURRENCY)}`,
 );
 
+/*
+    for of -> Tipo de for más moderno aplicable a los Arrays
+
+    Se usa principalmente para recorrer arreglos de forma sencilla sin preocuparnos de los indices internos, si no de los valores que contiene
+
+    for ( let elemento of array) {
+        lo que ejecuta el ciclo
+    }
+*/
+/* 
+const frutas = ['manzana', 'sandia', 'damascos', 'pera']
+
+for(let fruta of frutas ) {
+    console.log(fruta)
+}
+
+
+let numeros= [10,20,30,40];
+
+for (let numero of numeros) {
+    console.log(numero * 2)
+}
+
+ */
+/*
+Recibimos una lista de correos, verificar los correos que son validos.
+
+Nos tenemos que la lista devuelva correos que esten normalizados en minuscula, sin espacios y siguiendo la siguiente regla:
+
+    debe contener @
+    debe contener al menos un . posterior al @
+*/
+
+
+const emails = [
+    '      JuanIto@GMAIL.COM',
+    'aEgarmus@gmail',
+    'fabian@empresa.cl',
+    'jeremias.com',
+    'katherine@outlook.com      '
+]
+
+const emailsValidos = []
+
+for(let email of emails) {
+    const normalizeEmail = email.trim().toLocaleLowerCase() // trim -> Quita los espacios de uin string
+
+    const tieneArroba = normalizeEmail.includes('@'); // devuelve booleano
+    const postArroba = normalizeEmail.indexOf('@') // Determinar la posición del caracter dentro del string
+    const tienePuntoDespuesDeArroba = normalizeEmail.indexOf(".", postArroba) !== -1
+
+    if (tieneArroba && tienePuntoDespuesDeArroba) {
+        emailsValidos.push(normalizeEmail)
+    }
+}
+
+console.log(emailsValidos)
+
+
+// For In
+
+/* 
+Se usa primordial para recorrer objetos o recorrer los INDICES de un arreglo (pero en código profesional no se recomienda esto ultimo)
+
+for(let clave in objeto) {
+    el código que se va a ejecutar para mi objeto
+}
+
+*/
+
+
+const humanoide = {
+    nombre: 'Alan',
+    edad: 32,
+    pais: 'Shilito'
+}
+
+for(let clave in humanoide) {
+    console.log(humanoide[clave]) // objeto['clave']
+}
+
+
+// for in con arrays -> No es la mejor practica ❌
+
+const frutas = ["manzana", "sandia", "damascos", "pera"]
+
+for(let index in frutas) {
+    console.log(index)
+    console.log(frutas[index])
+}
+
+
+/* 
+Un minimarket tiene un inventario de existencia de productos. Se debe imprimir un reporte con cuantos elementos contamos, el minimo
+indispensable y en caso de estar bajo el minimo señalar una advertencia
+
+*/
+
+const inventario = {
+    arroz: { stock: 10, min: 15 },
+    tallarines: { stock: 15, min: 10 },
+    azucar: { stock: 3, min: 6 },
+    aceite: { stock: 12, min: 12 } 
+}
+
+for(const key in inventario) {
+    const stock = inventario[key].stock
+    const min =  inventario[key].min
+
+    const advertencia = stock < min ? '⚠️' : '✅'
+
+    console.log(`${key}: stock = ${stock} min = ${min} -> ${advertencia}`)
+}
+
+
+
+
 
 
 
