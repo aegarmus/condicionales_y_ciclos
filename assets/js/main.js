@@ -284,13 +284,85 @@ for(const key in inventario) {
 }
 
 
+// Ciclo While
+
+/* 
+Busca mantener un código en bucle o repetición mientras se cumpla una condición determinada 
+
+while(condicion) {
+    el código ejecutar
+}
+
+*/
+
+/* let numero = 1;
+
+while(numero <= 5) {
+    console.log('Numero: ', numero)
+    numero++
+}
+
+console.log('sali del ciclo', numero) */
+
+// Login con intentos limitados usando while
+/* 
+let intentos = 3
+let passwordCorrecta = '123456789'
+let passwordUsuario = ""
 
 
+while(intentos > 0 && passwordUsuario !== passwordCorrecta) {
+
+    passwordUsuario = prompt('Ingresa tu contraseña')
+
+    if(passwordUsuario !== passwordCorrecta) {
+        intentos--
+        alert(`Credenciales invalidas. Intentos restantes: ${intentos}`);
+    }
+}
+
+if(passwordCorrecta === passwordUsuario) {
+    alert('Login exitoso, bienvenido')
+} else {
+    alert('Cuenta bloqueada')
+}
+ */
+
+/*
+Ciclo Do While
+
+Ejecuta el código a evaluar por lo menos una vez, luego evalua una condición y determina si se vuelve a repetir
+o no
+
+do {
+    código a ejecutar y repetir (se ejecuta al menos una vez)
+} while(condición)
+
+*/ 
+
+let numero = 6
+
+do {
+    console.log('numero: ', numero)
+    numero++
+} while(numero <= 5)
+
+console.log('sali del ciclo: ', numero)
 
 
+//Insistir al usuario en la creación de un mail valido, debe contener un @ y un .
 
+let email
 
+do {
+    email = prompt("Ingresa tu email");
 
-//métodos de array
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("email inválido");
+    }
+} while (!email.includes("@") || !email.includes("."));
+
+alert(`Email Válido: ${email}`)
+
 
 //listas de cosas que vamos a procesar
